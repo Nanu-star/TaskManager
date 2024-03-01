@@ -38,6 +38,7 @@ public class TaskController {
   }
 
   // Get a task by ID
+  @CrossOrigin
   @GetMapping(value = "/{taskId}",
       produces = {"application/json"}
   )
@@ -50,6 +51,7 @@ public class TaskController {
   }
 
   // Update a task
+  @CrossOrigin
   @PutMapping(value = "tasks/{taskId}",
       consumes = {"application/json"},
       produces = {"application/json"})
@@ -62,6 +64,7 @@ public class TaskController {
   }
 
   // Delete a task
+  @CrossOrigin
   @DeleteMapping("/{taskId}")
   public ResponseEntity<Void> deleteTask(@PathVariable Long taskId) {
     taskService.deleteTask(taskId);
