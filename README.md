@@ -135,9 +135,34 @@ A `Dockerfile` is included so the application can be built and run without insta
    ```bash
    docker build -t task-manager .
    ```
+   If you need to build for a different platform (for example, building an 
+   amd64 image on an Apple Silicon machine) use **buildx** and be sure to
+   include the final `.` for the build context:
+   ```bash
+   docker buildx build --platform linux/amd64 -t task-manager .
+   ```
 2. Run the application:
    ```bash
    docker run -p 8080:8080 task-manager
    ```
 
 The API will be available at `http://localhost:8080`.
+
+### Windows
+
+If you are using Windows, install [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/).
+Run the same commands from **PowerShell** or **Command Prompt**:
+
+```powershell
+docker build -t task-manager .
+docker run -p 8080:8080 task-manager
+```
+
+If you need an amd64 image, use buildx instead:
+
+```powershell
+docker buildx build --platform linux/amd64 -t task-manager .
+docker run -p 8080:8080 task-manager
+```
+
+Docker Desktop must be running in Linux container mode (the default).
