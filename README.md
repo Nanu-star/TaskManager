@@ -148,6 +148,16 @@ A `Dockerfile` is included so the application can be built and run without insta
 
 The API will be available at `http://localhost:8080`.
 
+### Using Docker Compose
+
+If Docker Compose is installed, you can build and run the container with a single command:
+
+```bash
+docker compose up --build
+```
+
+This starts the application on port `8080`. Stop it with `Ctrl+C`.
+
 ### Windows
 
 If you are using Windows, install [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/).
@@ -156,6 +166,12 @@ Run the same commands from **PowerShell** or **Command Prompt**:
 ```powershell
 docker build -t task-manager .
 docker run -p 8080:8080 task-manager
+```
+
+You can also use Docker Compose:
+
+```powershell
+docker compose up --build
 ```
 
 If you need an amd64 image, use buildx instead:
