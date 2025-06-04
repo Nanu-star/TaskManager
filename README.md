@@ -142,3 +142,15 @@ A `Dockerfile` is included so the application can be built and run without insta
    ```
 
 The API will be available at `http://localhost:8080`.
+
+### Windows
+
+If you are using Windows, install [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/).
+Run the same commands from **PowerShell** or **Command Prompt**:
+
+```powershell
+docker buildx build --platform linux/amd64 -t task-manager .
+docker run -p 8080:8080 task-manager
+```
+
+Docker Desktop must be running in Linux container mode (the default).
