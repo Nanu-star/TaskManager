@@ -126,3 +126,19 @@ Error Responses
     Status: 404 Not Found
     Status: 400 Bad Request
     Status: 500 Internal Server Error
+
+## Running with Docker
+
+A `Dockerfile` is included so the application can be built and run without installing Java or Gradle locally.
+
+1. Build the container image:
+   ```bash
+   # use buildx for cross-platform builds
+   docker buildx build --platform linux/amd64 -t task-manager .
+   ```
+2. Run the application:
+   ```bash
+   docker run -p 8080:8080 task-manager
+   ```
+
+The API will be available at `http://localhost:8080`.
